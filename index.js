@@ -3,7 +3,7 @@ const app = express();
 
 const http = require("http");
 const WebSocket = require("ws");
-
+const port = process.env.PORT || 8080;
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
@@ -30,7 +30,7 @@ app.get("/", (req, res) =>
     res.send("Hello World!");
 });
 
-server.listen(8080, () =>
+server.listen(port, () =>
 {
     console.log("Listening to port 8080");
 });
